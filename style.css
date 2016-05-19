@@ -1,0 +1,205 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+header {
+	min-width: 100%;
+	min-height: 100%;
+	background: url('assets/cover.jpg');
+	background-size: cover;
+	opacity: .6;
+	position: relative;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+	color: black;
+	text-align: center;
+	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  	 font-weight: 300;
+}
+
+.headerSearch {
+	width: 80%;
+	margin: 0 10%;
+	padding: 8.475% 0;
+	background-color: rgba(0,0,0,0.8);
+	position: relative;
+}
+
+header h1 {
+	color: white;
+	font-size: 84px;
+	letter-spacing: 1px;
+	margin-top: 0;
+	margin-bottom: 0;
+  	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+header h2 {
+	color: white;
+	margin: 2.5% auto 0 auto;
+	font-size: 36px;
+	letter-spacing: 2px;
+	line-height: 48px;
+	width: 66.666666666667%;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+input.artistSearch {
+	width: 66.6%;
+	height: 75px;
+	margin: 5% 16.7%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+	width: 15%;
+	margin: 0 42.5%;
+	background-color: rgba(0, 0, 0,0);
+	border: 1.5px solid rgba(255,255,255,0.6);
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	text-shadow: -1px 0px 5px rgba(0, 0, 0, 0.52);
+}
+
+input[type=submit]:hover {
+	border: 1.5px solid rgba(255,255,255,0.8);
+}
+
+input[type=submit]:active {
+	border: 1.5px solid rgba(255,255,255,1);
+}
+
+.contentWrapper {
+	background-color: #ecf0f1;
+	margin-top: -20px;
+}
+
+.innerContentWrapper {
+	width: 75%;
+	margin: 0 auto;
+}
+
+
+.artistBox p{
+	text-align: left;
+}
+
+.artistBox h2 {
+	padding-top: 5%;
+}
+
+.albumInfoBox {
+	display: inline-block;
+	border-radius: 50%;
+	width: 40%;
+	margin: 5%;
+	border: 295px solid black;
+	padding: 18px;
+	background-color: white;
+}
+
+.albumInfoBox h3, 
+.albumInfoBox p {
+	color: #565A5C
+}
+
+.albumInfoBox h3 {
+	font-size: 16px;
+	font-style: oblique;
+	font-weight: 700;
+}
+
+.albumInfoBox p {
+	font-size: 14px;
+}
+
+footer {
+	display: none;
+	background-color: #565A5C;
+}
+
+footer p {
+	color: white;
+	text-align: center;
+	padding: 1.5%;
+	margin: 0;
+	font-size: 10px;
+}
+
+#social {
+	display: block;
+	margin: 0 auto;
+	width: 8%;
+}
+
+@media screen (min-width: 1440px) and (max-width: 1920px) {
+	header {
+		min-height: 1080px;
+	}
+
+	.albumInfoBox {
+		width: 26%;
+		margin: 5% 3.65%;
+		background-color: white;
+		padding: 15px;
+		border: 295px solid black;
+	}
+
+	.headerSearch {
+		padding: 8.5% 0;
+	}
+}
+
+
+@media only screen (max-width: 1025px) {
+	.albumInfoBox {
+		border: 115px solid black
+	}
+}
+
+@media only screen (max-device-width: 480px) {
+	body {
+		min-width: 100%;
+		min-height: 100%;
+	}
+	header {
+		min-width: 100%;
+		min-height: 100%;
+		background: url('assets/cover.jpg');
+		background-size: cover;
+	}
+
+	.headerSearch {
+		width: 100%;
+		margin: 0;
+	}
+
+	h1 {
+		width: 100%;
+		font-size: 2rem;
+	}
+
+	.albumInfoBox {
+		width: 100%;
+		margin: 5% 12.5%;
+		background-color: white;
+		padding: 15px;
+		border: 325px solid black;
+		margin: 5% 0;
+	}
+
+	.albumInfoBox h3, 
+	.albumInfoBox p {
+	font-size: 24px;
+	}
+
+	input[type=submit] {
+		width: 33.333334%;
+		margin: 0 33.333333%;
+}

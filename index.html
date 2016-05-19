@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Music Dossier</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="headerSearch">
+			<h1>Discography at a glance</h1>
+			<h2>A project using Discogs API, AJAX, JavaScript and jQuery</h2>
+			<form class="search">
+				<input type="text" class="artistSearch" placeholder="Who are you looking for?">
+				<input type="submit" value="Search bands!"></submit>
+			</form>
+			<h2>Enter a musician's name above and get their discography ranked by Discogs' most discerning nerds.</h2>
+		</div>
+	</header>
+	<div class="contentWrapper">
+		<div class="innerContentWrapper">
+			<section class="artistBox" id="artistBox">
+			</div>
+			<section class="albumWrapper">
+			</div>
+		</div>
+	</div>
+<footer>
+	<p>Made with love (and the Discogs API!) by .j(ordyn marcellu)s .</p>
+	<div id="social">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="jordynmarcellus">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
