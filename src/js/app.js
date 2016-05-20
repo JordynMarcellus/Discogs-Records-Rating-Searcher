@@ -1,18 +1,20 @@
 // Namespace
-
 var myApp = {};
 myApp.key = 'mbVHEypGaMdeyTMrYYHn'
 myApp.secret = 'riOpCutFddLUkrxCftUkCWNKekDbpVpL'
 
 //we could use query selector all. but, i mean, for this? naw
-myApp.artistBoxes = [].slice.call(document.getElementsByClassName("artistBox"))
+myApp.artistBoxes = [].slice.call(document.getElementsByClassName("artistBox"));
 // User inputs band they want to know more about
+
 myApp.init = function(){
+	
 	$('.search').on('submit',function(e){
 		e.preventDefault();
 		var searchTerm = $('.artistSearch').val();
 		myApp.getArtists(searchTerm);
 	});
+
 };
 
 myApp.searchURL = "https://api.discogs.com/database/search"	
@@ -22,23 +24,27 @@ myApp.releaseURL = "https://api.discogs.com/releases/"
 // This does a search query for an artist and returns the artist ID.
 
 myApp.getArtists = function getArtists(searchTerm) {
-$.ajax ({
-	url: myApp.searchURL,
-	type: "GET",
-	dataType: "json",
-	data : {		
-		key: myApp.key,
-		secret: myApp.secret,
-		q: searchTerm,
-	},
-	success : function (res) {
-		myApp.getArtistInfo(res.results[0].id)
-		myApp.getReleases(res.results[0].id)
+
+	$.ajax ({
+		url: myApp.searchURL,
+		type: "GET",
+		dataType: "json",
+		data : {		
+			key: myApp.key,
+			secret: myApp.secret,
+			q: searchTerm,
+		},
+		success : function (res) {
+			myApp.getArtistInfo(res.results[0].id)
+			myApp.getReleases(res.results[0].id)
 		}
-	});	
+	});
 }
+
 // Once we can figure out how to access the artist ID, run another API call to grab that info
+
 myApp.getArtistInfo = function getArtistInfo(id) {
+
 	$.ajax ({
 		url: myApp.artistURL + id,
 		type: "GET",
@@ -48,11 +54,17 @@ myApp.getArtistInfo = function getArtistInfo(id) {
 			console.log(artistres)
 		}
 	});
+
 }
 
 // Get album releases - needs to have /releases concated to the getArtistInfo to successfully make the call. 
 
+myApp.sortReleases = function(a,b) {
+	return a.year - b.year;
+}
+
 myApp.getReleases = function getArtistReleases(id) {
+
 	$.ajax ({
 		url: myApp.artistURL + id + "/releases",
 		type: "GET",
@@ -61,7 +73,8 @@ myApp.getReleases = function getArtistReleases(id) {
 			console.log(artistAlbums);
 			//error handling
 			if(artistAlbums.releases) {
-				artistAlbums.releases.forEach(myApp.getReleaseInfo)
+				artistAlbums.releases.sort(myApp.sortReleases);
+				artistAlbums.releases.forEach(myApp.getReleaseInfo);
 			} else {
 				console.log("hey we got an error here...", artistAlbums)
 			}
@@ -94,7 +107,7 @@ myApp.getReleaseInfo = function getReleaseInfo(album) {
 // Get artist info and put it in the HTML
 
 myApp.displayArtists = function(response) {
-	$('.artistBox').html('')
+	$('.artistBox').empty.append();
 	var artistDiv = $('<div>').addClass('artistInfo');
 	var artistName = $('<h2>').text(response.name);
 	artistDiv.append(artistName);

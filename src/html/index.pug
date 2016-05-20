@@ -1,0 +1,25 @@
+doctype
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title Music Dossier
+	link(rel="stylesheet" href="../css/bundle.css")
+body
+	header
+		div(class="headerSearch")
+			h1 Discography at a glance
+			h2 A project using the Discogs API, AJAX and JavaScript.
+			form(class="search")
+				input(type="text" class="artistSearch" placeholder="Who are you looking for?")
+				input(type="submit" value="Search bands!")
+			h2 Enter a musician's name above and get their discography ranked by Discogs' most discerning nerds.
+	//- This might change? 
+	div(class="contentWrapper")
+		div(class="innerContentWrapper")
+			section(class="artistBox" id="artistBox")
+			section(class="albumWrapper")
+footer
+	p <3 the Discogs API! by .j(ordyn marcellu)s 
+	div(id="social")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+script(src="../js/app.js")
