@@ -12,7 +12,7 @@ var rucksack = require('gulp-rucksack');
 var cssnano = require('gulp-cssnano');
 var concatCSS = require('gulp-concat-css');
 var nib = require('nib');
-
+var axis = require('axis')
 //postCSS modules
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -35,7 +35,7 @@ var imagemin = require ('gulp-imagemin');
 gulp.task('styles', function() {
     return gulp.src('src/css/*.styl')
         .pipe(stylus({
-             use: [nib(), rupture()]
+             use: [nib(), axis(), rupture()]
            }))
         .pipe( postcss([
             lost(),

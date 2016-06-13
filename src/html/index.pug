@@ -5,21 +5,36 @@ head
 	title Music Dossier
 	link(rel="stylesheet" href="../css/bundle.css")
 body
-	header
-		div(class="headerSearch")
+	header(class="header_wrapper wrapper")
+		div(class="transparent_overlay wrapper")
 			h1 Discography at a glance
 			h2 A project using the Discogs API, AJAX and JavaScript.
-			form(class="search")
-				input(type="text" class="artistSearch" placeholder="Who are you looking for?")
-				input(type="submit" value="Search bands!")
-			h2 Enter a musician's name above and get their discography ranked by Discogs' most discerning nerds.
+			form(id="discogs_search")
+				input(type="text" id="artist-search" placeholder="Who are you looking for?")
+				input(class="submit_btn btn" type="submit" value="Search bands!")
+				fieldset(id="sorters")
+					span(class="field-text") filter by
+					label(class="form-label")
+						input(class="radio-btn" type="radio" name="sorter_form" value="rating" placeholder="by rating")
+						span year
+					label(class="form-label")
+						input(class="radio-btn" type="radio" name="sorter_form" value="rating" placeholder="by rating")
+						span rating					
+			h2 Enter a musician's name above and get their discography, ranked by Discogs most discerning nerds.
 	//- This might change? 
-	div(class="contentWrapper")
-		div(class="innerContentWrapper")
-			section(class="artistBox" id="artistBox")
-			section(class="albumWrapper")
-footer
-	p <3 the Discogs API! by .j(ordyn marcellu)s 
-	div(id="social")
+	div(id="content-wrapper")
+		section(class="artist-box info-box" id="artist-box")
+		section(id="album-wrapper")
+		div(id="sliding-modal")
+			span(id="close-btn")
+			section(id="album-modal")
+				h1(id="album-title")
+				h2(id="album-label")
+				ol(id="album-tracklist")
+				ul(id="styles")
+				div(id="video-gallery")
+	footer
+		p made with Jade, Stylus, && Discogs API! by .j(ordyn marcellu)s
+		p Record by Eugen Belyakoff from the Noun Project
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
 script(src="../js/app.js")
